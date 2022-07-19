@@ -1,5 +1,6 @@
 import React from "react";
 import axios from 'axios';
+import {Navigate} from 'react-router-dom'
 import styles from './Register.css'
 class Register extends React.Component{
     state={
@@ -13,15 +14,25 @@ class Register extends React.Component{
       if(this.state.username===""||this.state.password===""||this.state.email===""){
          document.querySelector(".error").innerHTML="Please Fill The Require Field"
       }else{
-        const user ={
+        const {username,password,fullname,email} ={
             username:this.state.username,
             password:this.state.password,
             fullname:this.state.fullname,
             email:this.state.email
           }
-          console.log(user)
+          console.log(username,password,fullname,email)
           document.querySelector(".error").innerHTML=""
-          axios.post('localhost:3000/api',{user}) //Return Backend include {token,name,username,password,loggedIn:true or false}
+          axios.post('http://localhost:4000/api/register',{username,password,fullname,email})
+          .then(res=>{
+            console.log(res)
+            alert(res.data.message)
+           window.location="/Login"
+          })
+          .catch(err=>{
+            console.log(err.response.data)
+            document.querySelector(".error").innerHTML=err.response.data.message
+          })
+          //Return Backend include {token,name,username,password,loggedIn:true or false}
       }
       
    }
@@ -51,7 +62,7 @@ class Register extends React.Component{
                     <span>Username</span>
                 </div>
                 <div className="inputBox">
-                    <input type="text"required="required" name="password"onChange={(value)=>this.setState({password:value.target.value})}/>
+                    <input type="password"required="required" name="password"onChange={(value)=>this.setState({password:value.target.value})}/>
                     <span>Password</span>
                 </div>
                 <h5 className="error"></h5>
