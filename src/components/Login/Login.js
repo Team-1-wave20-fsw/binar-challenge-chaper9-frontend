@@ -11,13 +11,21 @@ class Login extends React.Component{
       if(this.state.username===""||this.state.password===""){
          document.querySelector(".error").innerHTML="Password or Username Require"
       }else{
-        const user ={
+        const {username,password} ={
             username:this.state.username,
             password:this.state.password
           }
-          console.log(user)
           document.querySelector(".error").innerHTML=""
-          axios.post('',{user}) //Return Backend include {token,name,username,password,loggedIn:true or false}
+          axios.post('http://localhost:4000/api/login',{username,password})
+          .then(res=>{
+            console.log(res)
+            alert("Selamat Datang Kembali "+res.data.data.username.toUpperCase())
+            window.location="/Home"
+          })
+          .catch(err=>{
+            console.log(err.response.data)
+            document.querySelector(".error").innerHTML=err.response.data.message
+          })
       }
       
    }
