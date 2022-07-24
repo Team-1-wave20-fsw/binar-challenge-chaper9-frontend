@@ -1,13 +1,11 @@
 import React from 'react'
-import NavBar from '../Navbar/NavBar';
+import NavBar from '../Navbar/Navbar';
 import "./UpdateProfile.css"
-import { useNavigate } from "react-router";
-import { Alert, Button, Container } from "reactstrap";
 import axios from 'axios';
 
 
 class UpdateProfile extends React.Component {
-   state={
+    state={
         email:"",
         fullname:"",
         bio:"",

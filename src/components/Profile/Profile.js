@@ -1,8 +1,7 @@
 import React from 'react';
-import NavBar from "../Navbar/NavBar";
+import NavBar from "../Navbar/Navbar";
 import "./Profile.css"
 import { useNavigate } from 'react-router';
-import { Button } from 'reactstrap';
 
 
 const Profile = ()=> {
@@ -18,7 +17,7 @@ const Profile = ()=> {
   return (
     <>
     < NavBar/>
-      <div>
+    <div>
         <div className="container w-75 p3">
            <div className="row">
             <h1 className='userp'>User Profile</h1>
