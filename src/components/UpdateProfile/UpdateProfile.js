@@ -1,8 +1,6 @@
 import React from 'react'
-import NavBar from '../Navbar/NavBar';
+import NavBar from '../Navbar/Navbar';
 import "./UpdateProfile.css"
-import { useNavigate } from "react-router";
-import { Alert, Button, Container } from "reactstrap";
 import axios from 'axios';
 
 

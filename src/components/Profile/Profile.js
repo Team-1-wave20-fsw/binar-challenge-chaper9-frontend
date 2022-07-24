@@ -1,8 +1,7 @@
 import React from 'react';
-import NavBar from "../Navbar/NavBar";
+import NavBar from "../Navbar/Navbar";
 import "./Profile.css"
 import { useNavigate } from 'react-router';
-import { Button } from 'reactstrap';
 
 
 const Profile = ()=> {
@@ -43,9 +42,7 @@ const Profile = ()=> {
                     <th className="text-center"></th>
                     <th className="text-center"></th>
                     <th className="text-center">
-                      <Button  className="btn-warning "  onClick={() => goToUpdate()}>
-                        Update
-                      </Button>
+                        <button className="btn-warning" onClick={() => goToUpdate()}>Update</button>
                     </th>
                   </tr>
                 </tbody>

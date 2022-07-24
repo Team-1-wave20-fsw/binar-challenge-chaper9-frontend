@@ -1,5 +1,5 @@
-import React from 'react'
-import NavBar from '../Navbar/NavBar'
+import React,{useEffect,useState}from 'react'
+import NavBar from '../Navbar/Navbar'
 import "./LandingPage.css"
 import aaron from "./images/aaron.png"
 import evan from "./images/evan.png"
@@ -10,38 +10,28 @@ import twitter from "./images/twitter.svg"
 
 
 const LandingPage = () => {
+    const[currentUser,setUser]=useState({status:"",fullname:""})
+    useEffect(()=>{
+        const token = sessionStorage.getItem("accesToken")
+            //axios.get('',{headers:{authorization:token}}).then(res =>{
+                //const user = {authorization:res.data.authorization,fullname:res.data.fullname} // True or False
+               setUser({loggedIn:true,fullname:"Bambang"})
+        },[])
 
       return (
       <>
-      <NavBar/>
-        {/* <div className="nav">
-          <div className="logo">
-              <a href="#">logo</a>
-          </div>
-          <div className="navmid">
-              <a href="#">home</a>
-              <a href="#">Game List</a>
-              <a href="#">profile</a>
-          </div>
-          <div className="userarea">
-              <a href="#">sign up</a>
-              <a href="#">login</a>
-          </div>
-      </div> */}
-
-      <div className="mainpage">
-          <div className="maincontent">
-              <h1>play traditional game</h1>
-          </div>
-          <div className="tagline">
-              <p>Experience new traditional game play</p>
-          </div>
-          <div className="btn">
-
-          </div>
-          <div></div>
-          <div className="text-white">THE STORY</div>
-      </div>
+      <div className="container-fluid img">
+            <div className="hero-main-info">
+                <div class="p-5 text-center text-white bg-transparent" id="hero-main">
+                    <h1 className="mb-3" id="heroTitle">PLAY TRADITIONAL GAME</h1>
+                    <h4 className="mb-3" id="heroSubtitle">Selamat Datang {currentUser?.loggedIn ? currentUser?.fullname:""}</h4>
+                    <a className="btn btn-warning" href="/list" role="button">PLAY NOW</a>
+                </div>
+                <div className="scroll-down-btn">
+                    <p className="scroll-btn-text text-white text-center">The Story</p>
+                </div>
+            </div>
+        </div>
 
       <div id="container-fluid-games" className="container-fluid">
           {/* <div className=" "> */}
