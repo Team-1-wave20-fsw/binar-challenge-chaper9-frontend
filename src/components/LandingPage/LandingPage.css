@@ -104,12 +104,12 @@
     background-position: center;
 }
 
-#container-main {
+/* #container-main {
     text-align: center;    
     color: white;
 }
 
-#container-main > h1 {    
+#container-main > .play {    
     font-size: 60px;
     padding-top: 40vh;
     font-weight: bold;
@@ -118,23 +118,14 @@
     font-family: 'Open Sans', sans-serif;
 }
 
-#container-main > h3 {
+#container-main > .what {
     font-size: 15px;
     margin-top: 10vh;
     margin-bottom: 10vh;
     letter-spacing: 1.5px;
     text-transform: none;
     font-family: 'Open Sans', sans-serif;
-}
-
-#container-main > p {
-    margin-top: 35vh;
-    margin-bottom: -2vh;
-    font-size: 10px;
-    font-weight: bold;
-    text-transform: uppercase;
-    font-family: 'Open Sans', sans-serif;
-}
+} */
 
 #caret-down {
     color: white;
@@ -153,7 +144,7 @@
     
 }
 
-#container-fluid-games > .row > .col > h1 {
+#container-fluid-games > .row > .col > .the {
     color: white;
     margin-top: -5vh;
     padding-top: 10px;
@@ -166,7 +157,7 @@
 
 }
 
-#container-fluid-games > .row > .col > h3 {
+#container-fluid-games > .row > .col > .what {
     color: white;
     margin-top: -20vh;
     margin-left: 6vw;
@@ -202,7 +193,7 @@
     margin-top: 30vh;
 }
 
-#container-fluid-features > .row > .col > h1 {
+#container-fluid-features > .row > .col > .feature {
     color: white;
     letter-spacing: 3px;
     margin-left: 1vw;
@@ -211,7 +202,7 @@
     font-family: 'Open Sans', sans-serif;    
 }
 
-#container-fluid-features > .row > .col > h6 {
+#container-fluid-features > .row > .col > .special {
     color: white;
     font-size: 15px;    
     letter-spacing: 1.5px;
@@ -222,21 +213,21 @@
     font-family: 'Open Sans', sans-serif;
 }
 
-.tl-item > div > h4 {
+.tl-item > div > .trad {
     color: #fbb341;
     text-transform: uppercase;
     font-weight: normal;
     letter-spacing: 3px; 
 } 
 
-.tl-item2 > .tl-right > h4 {
+.tl-item2 > .tl-right > .tbd {
     color: #fbb341;
     text-transform: uppercase;
     font-weight: normal;
     letter-spacing: 3px;
 }
 
-.tl-item > div > p {
+.tl-item > div > .if {
     font-size: 12px;
     color: white;
     padding-bottom: 5vh;
@@ -315,7 +306,7 @@
     background-position: center;
 }
 
-#container-fluid-systemRequirements > .row > .col-sm-8 > h1 {
+#container-fluid-systemRequirements > .row > .col-sm-8 > .system {
     color: white;
     letter-spacing: 3px;
     margin-top: 10vh;
@@ -327,7 +318,7 @@
     text-align: left;
 }
 
-#container-fluid-systemRequirements > .row > .col-sm-8 > h6 {
+#container-fluid-systemRequirements > .row > .col-sm-8 > .can {
     color: white;
     font-size: 15px;    
     margin-top: -15vh;
@@ -344,7 +335,7 @@
     
 }
 
-.col-sm-8 > .table > thead > tr > th > p {
+.col-sm-8 > .table > thead > tr > th > .isi {
     color: white;
     font-size: 12px;    
     margin-top: 1vh;
@@ -366,7 +357,7 @@
     background-position: center;
 }
 
-#topscore > .row > .col-sm-4 > h1 {
+#topscore > .row > .col-sm-4 > .top {
     color: white;
     letter-spacing: 3px;
     margin-top: 45vh;
@@ -376,7 +367,7 @@
     font-family: 'Poppins', sans-serif;  
 }
 
-#topscore > .row > .col-sm-4 > h6 { 
+#topscore > .row > .col-sm-4 > .plat { 
     font-size: 18px;
     color: white;
     margin-top: 3vh;
@@ -385,9 +376,10 @@
     font-weight: normal;
     font-family: 'Poppins', sans-serif;
     padding-left: 5vw;
+    text-align: left;
 }
 
-.topscore > .row > .col-sm-4 > .a {
+.topscore > .row > .col-sm-4 > .see {
     margin-top: -15vh;
     margin-left: 50rem;
     margin-bottom: 25vh;
@@ -399,12 +391,12 @@
     padding-top: 20px;
 }
   
-.testiPad h6 {
+.testiPad > .cardDate {
     color: rgb(255, 255, 255);
     opacity: 0.5;
 } 
   
-.namecard h6{
+.namecard > .ishi{
     font-size: 24px;
     color: rgb(255, 255, 255);
     opacity: 0.5;
@@ -483,7 +475,7 @@
     padding: 5px;
 }
   
-.twitter img{
+.twitter > .twit{
    width: auto;
    height: 25%;
 }
@@ -497,24 +489,25 @@
     background-position: center;
 }
 
-#container-fluid-newsletter > .row > .col-sm-4 > img {
+#container-fluid-newsletter > .row > .col-sm-4 > .img-fluid {
     margin-top: 30vh;
     margin-left: 11vw;
     height: 70vh;
 }
 
-#container-fluid-newsletter > .row > .col-sm-8 > h1 {
+#container-fluid-newsletter > .row > .col-sm-8 > .news {
     color: white;
     letter-spacing: 3px;
     margin-top: 30vh;
     font-weight: normal;    
     text-transform: uppercase;    
     font-family: 'Oppen Sans', sans-serif;  
-    margin-left: -90vh;
+    margin-left: 3vh;
+    text-align: left;
     
 }
 
-#container-fluid-newsletter > .row > .col-sm-8 > h6 { 
+#container-fluid-newsletter > .row > .col-sm-8 > .want { 
     font-size: 25px;
     color: white;
     margin-top: -23vh;
@@ -526,7 +519,7 @@
     
 }
 
-#container-fluid-newsletter >.row > .col-sm-8 > p {
+#container-fluid-newsletter >.row > .col-sm-8 > .in {
     font-size: 15px;
     color: white;
     letter-spacing: 1.5px;
@@ -535,9 +528,10 @@
     /* margin-left: 10vw; */
     margin-right: 7vw;
     margin-bottom: 8vh;
-    margin-left: 20px;
+    margin-left: -15px;
     padding-left: 30px;
     padding-top: 20px;
+    text-align: left;
 }
 
 input#inputEmail {
@@ -562,6 +556,7 @@ input#inputEmail:focus {
 }
 
 .col-auto > a > .btn {
+    margin-top: 25px;
     font-size: 13px;
     letter-spacing: 0.5px;
     font-weight: bold;
@@ -577,8 +572,8 @@ footer {
     background-position: center;
 }
   
-footer p {
-    margin-left: -9.2em;
+footer .bin  {
+    margin-left: -7em;
     font-size: 12px;
     color: grey;
     text-align: start;
@@ -676,8 +671,10 @@ footer li a:hover {
 
 
 
-@media screen and (max-width:880px) {
-    #container-fluid-games > .row > .col > h1 {
+
+
+@media (max-width:900px) {
+    #container-fluid-games > .row > .col > .the {
         color: white;
         margin-top: -5vh;
         padding-top: 10px;
@@ -690,7 +687,7 @@ footer li a:hover {
         font-size: 30px;
     }
     
-    #container-fluid-games > .row > .col > h3 {
+    #container-fluid-games > .row > .col > .what {
         color: white;
         margin-top: -20vh;
         margin-left: 6vw;
@@ -702,7 +699,7 @@ footer li a:hover {
         font-size: 12px;
     }
 
-    #container-fluid-systemRequirements > .row > .col-sm-8 > h1 {
+    #container-fluid-systemRequirements > .row > .col-sm-8 > .system {
         color: white;
         letter-spacing: 3px;
         margin-top: 10vh;
@@ -715,7 +712,7 @@ footer li a:hover {
         font-size: 30px;
     }
     
-    #container-fluid-systemRequirements > .row > .col-sm-8 > h6 {
+    #container-fluid-systemRequirements > .row > .col-sm-8 > .can {
         color: white;
         font-size: 15px;    
         margin-top: -17vh;
@@ -727,23 +724,25 @@ footer li a:hover {
         font-size: 15px;
     }
 
-    #topscore > .row > .col-sm-4 > h1 {
+    #topscore > .row > .col-sm-4 > .top {
         color: white;
         letter-spacing: 3px;
         margin-top: -5vh;
-        padding-top: 10%;
+        padding-top: 8%;
         font-weight: normal;    
         text-transform: uppercase;    
         font-family: 'Poppins', sans-serif;  
         font-size: 30px;
-        margin-left: -30vh;
+        margin-left: 10vh;
+        text-align: left;
+        position: absolute;
     }
     
-    #topscore > .row > .col-sm-4 > h6 { 
+    #topscore > .row > .col-sm-4 > .plat { 
         font-size: 18px;
         color: white;
-        margin-top: 3vh;
-        margin-bottom: 10vh;
+        padding-top: 10%;
+        margin-bottom: 2vh;
         letter-spacing: 1.5px;
         font-weight: normal;
         font-family: 'Poppins', sans-serif;
@@ -752,32 +751,32 @@ footer li a:hover {
         margin-left: 2vh;
     }
     
-    .topscore > .row > .col-sm-4 > .a {
-        margin-top: -15vh;
+    .topscore > .row > .col-sm-4 > .see > .btn{
+        /* margin-top: 20%; */
         margin-left: 50rem;
-        margin-bottom: 25vh;
+        margin-bottom: 10vh;
         padding-left: 10vh;
-    
+        padding-top: 20%;
     }
 
-    .namecard h6{
+    .namecard .ishi{
         font-size: 17px;
         color: rgb(255, 255, 255);
         opacity: 0.5;
         padding-left: 4vh;
     }
-    .namecard h3{
+    .namecard .text-warning{
         font-size: 18px;
         color: rgb(255, 255, 255);
         opacity: 0.5;
         padding-left: 1vh;
     }
     
-    .testiRow span{
+    .testiRow .testiTxt{
         font-size: 14px;
-        
     }
-    .testiRow h6{
+    
+    .testiRow .cardDate{
         font-size: 14px;
         height: 50cm;
     }
@@ -788,6 +787,7 @@ footer li a:hover {
         width: 600px;
         padding: 5px;
         font-size: smaller;
+        padding-top: 2%;
       }
       
     .cardEvan{        
@@ -854,12 +854,6 @@ footer li a:hover {
 
 
     
-    #container-fluid-newsletter > .row > .col-sm-4 > img {
-        margin-top: 100vh;
-        margin-left: 11vw;
-        height: 60px;
-        
-    }
     #container-fluid-newsletter {
         background-color: black;
         height: 130vh;
@@ -867,26 +861,28 @@ footer li a:hover {
         background-position: center;
     }
     
-    #container-fluid-newsletter > .row > .col-sm-4 > img {
+    #container-fluid-newsletter > .row > .col-sm-4 > .img-fluid {
         margin-top: 30vh;
         margin-left: 11vw;
         height: 70vh;
         size: 10px;
+        padding-left: -60px;
+        position: absolute;
     }
     
-    #container-fluid-newsletter > .row > .col-sm-8 > h1 {
+    #container-fluid-newsletter > .row > .col-sm-8 > .news {
         color: white;
         letter-spacing: 3px;
-        margin-top: -70vh;
+        margin-top: 40vh;
         font-weight: normal;    
         text-transform: uppercase;    
         font-family: 'Oppen Sans', sans-serif;  
-        margin-left: 55vh;
+        margin-left: 14vh;
         font-size: 20px;
         
     }
     
-    #container-fluid-newsletter > .row > .col-sm-8 > h6 { 
+    #container-fluid-newsletter > .row > .col-sm-8 > .want { 
         font-size: 17px;
         color: white;
         margin-top: -20vh;
@@ -894,12 +890,13 @@ footer li a:hover {
         letter-spacing: 1.5px;
         font-weight: normal;
         font-family: 'Open Sans', sans-serif;
-        margin-left: 60vw;
+        margin-left: 10vw;
         font-size: 14px;
-        
+        text-align: left;
+        margin-left: 14vh;
     }
     
-    #container-fluid-newsletter >.row > .col-sm-8 > p {
+    #container-fluid-newsletter >.row > .col-sm-8 > .in {
         font-size: 15px;
         color: white;
         letter-spacing: 1.5px;
@@ -909,7 +906,7 @@ footer li a:hover {
         margin-right: 7vw;
         margin-bottom: 8vh;
         margin-left: 20px;
-        padding-left: 270px;
+        padding-left: 60px;
         padding-top: 10px;
         font-size: 10px;
     }
@@ -921,6 +918,7 @@ footer li a:hover {
         width: 13vw;
         height: 5vw;
         margin-top: -25px;
+        margin-left: 14vh;
     }
     
     input#inputEmail::placeholder {
@@ -945,7 +943,7 @@ footer li a:hover {
         margin-left: 60vw;  
         width: 20vw;
         margin-top: 10px;
-        padding-left: 7px;
+        margin-left: -5vh;
     }
 
 
@@ -957,7 +955,7 @@ footer li a:hover {
         background-position: center;
     }
       
-    footer p {
+    footer .bin {
         margin-left: -9.2em;
         font-size: 12px;
         color: grey;

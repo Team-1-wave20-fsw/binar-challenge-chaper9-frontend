@@ -17,10 +17,10 @@ const Profile = ()=> {
   return (
     <>
     < NavBar/>
-      <div>
+    <div>
         <div className="container w-75 p3">
            <div className="row">
-            <h1>User Profile</h1>
+            <h1 className='userp'>User Profile</h1>
            </div>
             <div className="row">
               <div class="col">
@@ -42,7 +42,9 @@ const Profile = ()=> {
                     <th className="text-center"></th>
                     <th className="text-center"></th>
                     <th className="text-center">
-                        <button className="btn-warning" onClick={() => goToUpdate()}>Update</button>
+                      <Button  className="btn-warning "  onClick={() => goToUpdate()}>
+                        Update
+                      </Button>
                     </th>
                   </tr>
                 </tbody>
