@@ -2,115 +2,61 @@
 @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans&display=swap");
 /* Responsive Styling */
 
-* {
-    font-family: arial;
-    border: 0px;
-    margin: 0px;
-}
 
 /* css navbar */
-.nav {
-    display: flex;
-    background-color: rgba(0, 0, 0, 0.863);
-    position: fixed;
-    width: 100vw;
-    height: 70px;
-    /*opacity: 0.6;*/
-    justify-content: space-between;
+.img {
+    background: url("../../assets/images/main-bg.jpg") no-repeat center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    padding: 0 0 0 0;
+    margin:0 auto;
+    width: auto;
+    background-size:cover;
+    background-position: center;
+    height: 100vh;
+    overflow: none;
 }
 
-.nav a {
-    color: white;
-    text-transform: uppercase;
-    text-decoration: none;
+.hero-main-info {
+    height: 100%;
 }
 
-.nav .logo {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    margin-left: 100px;
-}
-
-.logo {
-    font-size: 20px;
-    font-weight: bold;
-    letter-spacing: 3px;
-}
-
-.nav .navmid {
-    display: flex;
-    align-items: center;
-    margin-right: 100px;      
-}
-
-.navmid a {
-    padding: 0px 20px;
-    
-}
-
-.nav .userarea {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    margin-right: 50px;
-}
-
-.userarea a {
-    padding: 0px 20px;
-}
-
-.mainpage {
+#hero-main {
     display: flex;
     flex-direction: column;
-    background-image: url("./images/main-bg.jpg");
-    background-size: cover;
-    height: 130vh;
-    justify-content: flex-start;
     align-items: center;
-    background-repeat: no-repeat;
-    overflow: hidden;
+    justify-content: center;
+    padding-top: 0px !important;
+    height: 90%;
 }
 
-.mainpage .maincontent {
-    display: flex;
-    color: white;
-    text-transform: uppercase;
-    font-size: 2vw;
-    padding-top: 200px;
-    letter-spacing: 2px;
-    
-}
-
-
-.mainpage .tagline {
-    display: flex;
-    color: white;
-    font-size: 2vw;
-    padding-top: 40px;
-}
-
-button {
-    background-color: rgba(255, 208, 0, 0.89);
-    border: none;
-    border-radius: 2px;
-    color:  black;
-    padding: 15px 3vw;
-    text-align: center;
-    text-decoration: none;
-    text-transform: uppercase;
-    display: inline-block;
-    font-size: 16px;
+#heroTitle {
+    font-size: 4rem !important;
     font-weight: bold;
-    cursor: pointer;
-
+    color: black;
 }
 
+#heroSubtitle {
+    font-size: 2.5rem !important;
+    color: black;
+    font-weight: bold;
+}
 
-.mainpage .btn {
+.scroll-down-btn {
+    font-size: 14px;
     display: flex;
-    padding-top: 100px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
+
+.scroll-btn-text {
+    text-transform: uppercase;
+}
+
+
+
 
 /* #mainpage > p {
     margin-top: 35vh;

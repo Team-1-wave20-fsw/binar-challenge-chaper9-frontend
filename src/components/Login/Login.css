@@ -27,9 +27,14 @@
     
     
 }
+.inputContainer h1{
+    color: black!important;
+    font-family: inherit!important;
+}
 .inputBox{
     position: relative;
     width: 250px;
+    
 }
 .inputBox input{
     width: 100%;
@@ -87,4 +92,12 @@ border-radius: 4px;
 .buttonLogin:hover{
     background-color: black;
     color: #FFB343;
+}
+.login-nav{
+    text-decoration: none;
+    color: black;
+}
+.login-nav:hover{
+    text-decoration: underline;
+    color: black;
 }
