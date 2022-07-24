@@ -1,5 +1,5 @@
-import React,{useEffect,useState}from 'react'
-import NavBar from '../Navbar/Navbar'
+import React from 'react'
+import NavBar from '../Navbar/NavBar'
 import "./LandingPage.css"
 import aaron from "./images/aaron.png"
 import evan from "./images/evan.png"
@@ -10,36 +10,46 @@ import twitter from "./images/twitter.svg"
 
 
 const LandingPage = () => {
-    const[currentUser,setUser]=useState({status:"",fullname:""})
-    useEffect(()=>{
-        const token = sessionStorage.getItem("accesToken")
-            //axios.get('',{headers:{authorization:token}}).then(res =>{
-                //const user = {authorization:res.data.authorization,fullname:res.data.fullname} // True or False
-               setUser({loggedIn:true,fullname:"Bambang"})
-        },[])
 
       return (
       <>
-      <div className="container-fluid img">
-            <div className="hero-main-info">
-                <div class="p-5 text-center text-white bg-transparent" id="hero-main">
-                    <h1 className="mb-3" id="heroTitle">PLAY TRADITIONAL GAME</h1>
-                    <h4 className="mb-3" id="heroSubtitle">Selamat Datang {currentUser?.loggedIn ? currentUser?.fullname:""}</h4>
-                    <a className="btn btn-warning" href="/list" role="button">PLAY NOW</a>
-                </div>
-                <div className="scroll-down-btn">
-                    <p className="scroll-btn-text text-white text-center">The Story</p>
-                </div>
-            </div>
-        </div>
+      <NavBar/>
+        {/* <div className="nav">
+          <div className="logo">
+              <a href="#">logo</a>
+          </div>
+          <div className="navmid">
+              <a href="#">home</a>
+              <a href="#">Game List</a>
+              <a href="#">profile</a>
+          </div>
+          <div className="userarea">
+              <a href="#">sign up</a>
+              <a href="#">login</a>
+          </div>
+      </div> */}
+
+      <div className="mainpage">
+          <div className="maincontent">
+              <h1 className='play'>play traditional game</h1>
+          </div>
+          <div className="tagline">
+              <p>Experience new traditional game play</p>
+          </div>
+          <div className="btn">
+
+          </div>
+          <div></div>
+          <div className="text-white">THE STORY</div>
+      </div>
 
       <div id="container-fluid-games" className="container-fluid">
           {/* <div className=" "> */}
               <div className="row align-items-center">
                   <div className="col">
-                      <h3 >What's so special ?</h3>
+                      <h3 className='what'>What's so special ?</h3>
                       <br/>
-                      <h1>The Games</h1>
+                      <h1 className='the'>The Games</h1>
                   </div>
                   <div className="col">
                   <div id="carouselExampleIndicators" className="carousel slide" data-ride="carousel">
@@ -78,25 +88,25 @@ const LandingPage = () => {
               <div className="row align-items-center">
                   <div className="col"></div>
                   <div id="col-features" className="col">
-                      <h1>Features</h1>
-                      <h6>What's so special ?</h6>
+                      <h1 className='feature'>Features</h1>
+                      <h6 className='special'>What's so special ?</h6>
                       <div className="tl-item">
                           <div className="tl-dot b-warning"></div>
                           <div>
-                              <h4>Traditional Games</h4>
-                              <p>If you miss your childhood, we provide many traditional games here</p>
+                              <h4 className='trad'>Traditional Games</h4>
+                              <p className='if'>If you miss your childhood, we provide many traditional games here</p>
                           </div>
                       </div>
                       <div className="tl-item2">
                           <div className="tl-dot2"></div>
                           <div className="tl-right">
-                              <h4>Game Suit</h4>
+                              <h4 className='tbd'>Game Suit</h4>
                           </div>
                       </div>
                       <div className="tl-item2">
                           <div className="tl-dot2"></div>
                           <div className="tl-right">
-                              <h4>TBD</h4>
+                              <h4 className='tbd'>TBD</h4>
                           </div>
                       </div>
                   </div>
@@ -108,8 +118,8 @@ const LandingPage = () => {
           {/* <div className=" "> */}
               <div className="row">
                   <div className="col-sm-8">
-                      <h1>System<br />Requirements</h1>
-                      <h6>Can my computer run this game ?</h6>
+                      <h1 className='system'>System<br />Requirements</h1>
+                      <h6 className='can'>Can my computer run this game ?</h6>
                   </div>
               </div>
               <div className="row">
@@ -118,23 +128,23 @@ const LandingPage = () => {
                           <thead>
                               <tr>
                               <th scope="col">OS : <br />
-                                  <p>Windows 7 64-bit only (No OSX support at this time)</p>
+                                  <p className='isi'>Windows 7 64-bit only (No OSX support at this time)</p>
                               </th>
                               <th scope="col">PROCESSOR : <br />
-                                  <p>Intel Core 2 Duo @2.4 GHZ or AMD Athlon X2 @2.8 GHZ</p>
+                                  <p className='isi' >Intel Core 2 Duo @2.4 GHZ or AMD Athlon X2 @2.8 GHZ</p>
                               </th>
                               </tr>
                               <tr>
                               <th scope="col">MEMORY : <br />
-                                  <p>4 GB RAM</p>
+                                  <p className='isi'>4 GB RAM</p>
                               </th>
                               <th scope="col">STORAGE : <br />
-                                  <p>8 GB available space</p>
+                                  <p className='isi'>8 GB available space</p>
                               </th>
                               </tr>
                               <tr>
                               <th scope="col" colSpan="2">GRAPHICS : <br />
-                                  <p>NVIDIA GeForce GTX 660 2GB or AMD Radeon HD 7850 2GB DirectX11 (Shader Model 5)</p>
+                                  <p className='isi'>NVIDIA GeForce GTX 660 2GB or AMD Radeon HD 7850 2GB DirectX11 (Shader Model 5)</p>
                               </th>
                               </tr>
                           </thead>
@@ -149,10 +159,10 @@ const LandingPage = () => {
           {/* <div className=" ">  */}
               <div className="row">
                   <div className="col-sm-4">
-                      <h1 >Top Scores</h1>
-                      <h6 >This top scores from various games provided on this platform</h6>
+                      <h1 className='top'>Top Scores</h1>
+                      <h6 className='plat'>This top scores from various games provided on this platform</h6>
 
-                      <a href='#'>
+                      <a className='see' href='#'>
                           <button type="button" className="btn btn-warning col-6 fw-bold" >See More</button>
                       </a>
                   </div>
@@ -166,10 +176,10 @@ const LandingPage = () => {
                                       </div>
                                       <div className="namecard col-7">
                                           <h3 className="text-warning">Evan Lahti</h3>
-                                          <h6>PC Gamer</h6>
+                                          <h6 className='ishi'>PC Gamer</h6>
                                       </div>
                                       <div className="twitter col-2">
-                                          <img src={twitter} alt="twitter" />
+                                          <img className='twit' src={twitter} alt="twitter" />
                                       </div>
                                   </div>
                                   <div className="testiRow row">
@@ -188,10 +198,10 @@ const LandingPage = () => {
                                       </div>
                                       <div className="namecard col-7">
                                           <h3 className="text-warning">Jada Griffin </h3>
-                                          <h6>Nerdreactor</h6>
+                                          <h6 className='ishi'>Nerdreactor</h6>
                                       </div>
                                       <div className="twitter col-2">
-                                          <img src={twitter} alt="twitter" />
+                                          <img className='twit' src={twitter} alt="twitter" />
                                       </div>
                                   </div>
                                   <div className="testiRow row">
@@ -210,10 +220,10 @@ const LandingPage = () => {
                                       </div>
                                       <div className="namecard col-7">
                                           <h3 className="text-warning">Aaron Will</h3>
-                                          <h6> Uproxx</h6>
+                                          <h6 className='ishi'> Uproxx</h6>
                                       </div>
                                       <div className="twitter col-2">
-                                          <img src={twitter} alt="twitter" />
+                                          <img className='twit' src={twitter} alt="twitter" />
                                       </div>
                                   </div>
                                   <div className="testiRow row">
@@ -239,10 +249,10 @@ const LandingPage = () => {
                   </div>
 
                   <div className="col-sm-8">                    
-                      <h1>Newsletter<br/>Subscribe</h1>
-                      <h6>Want to stay in touch ?</h6>
+                      <h1 className='news'>Newsletter<br/>Subscribe</h1>
+                      <h6 className='want'>Want to stay in touch ?</h6>
 
-                      <p>In order to start receiving our news, all you have to do is enter your email address. Everything else will be taken care of by us. We will send you emails containing information about game. We don't spam</p>
+                      <p className='in'>In order to start receiving our news, all you have to do is enter your email address. Everything else will be taken care of by us. We will send you emails containing information about game. We don't spam</p>
                       <form>
                           <div className="row align-items-center g-3">
                               <div className="col-auto">
@@ -296,7 +306,7 @@ const LandingPage = () => {
                   <div className="container-fluid-newsletter ">
                       <div className="row bottom">
                           <div className="btm-left col-8">
-                              <p>© 2022 Binar Academy, Inc. All Rights Reserved</p>
+                              <p className='bin'>© 2022 Binar Academy, Inc. All Rights Reserved</p>
                           </div>
                           <div className="col-md-4 text-right">
                               <ul>

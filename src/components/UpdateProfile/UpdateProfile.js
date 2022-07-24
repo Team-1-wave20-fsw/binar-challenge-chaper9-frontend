@@ -1,6 +1,8 @@
 import React from 'react'
-import NavBar from '../Navbar/Navbar';
+import NavBar from '../Navbar/NavBar';
 import "./UpdateProfile.css"
+import { useNavigate } from "react-router";
+import { Alert, Button, Container } from "reactstrap";
 import axios from 'axios';
 
 
@@ -49,6 +51,7 @@ class UpdateProfile extends React.Component {
     return (
     <>
     {/* <NavBar /> */}
+    <div className='main'>
     <div className='row container-height' >
         <div className='col-lg-6 col-md-6 m-auto' >
             <div className='container' >
@@ -126,6 +129,7 @@ class UpdateProfile extends React.Component {
                     </form>
             </div>
         </div>
+    </div>
     </div>
     </>
   )
