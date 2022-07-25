@@ -1,6 +1,5 @@
-import React ,{useState,setState}from "react";
+import React ,{useState}from "react";
 import axios from 'axios';
-import Home from "../Home/Home";
 import styles from './Login.css'
 function Login(){
   const[password,setPassword]= useState("")
@@ -11,7 +10,7 @@ function Login(){
     }else{
       console.log({username,password})
         document.querySelector(".error").innerHTML=""
-        /*axios.post('http://localhost:4000/api/login',{username,password})
+        axios.post('http://localhost:4000/api/login',{username,password})
         .then(res=>{
           console.log(res.data.data.accessToken)
           sessionStorage.setItem('accessToken',res.data.data.accessToken)
@@ -20,29 +19,28 @@ function Login(){
         
         }).then(user=>{
           alert("Selamat Datang "+user.toUpperCase())
-          window.location="/Home"
+          window.location="/"
         })
         .catch(err=>{
           console.log(err)
           document.querySelector(".error").innerHTML=err.response.data.message
-        })*/
+        })
     }
     
  }
 
   return(
       <>
-      <div className="background">
-      </div>
+      <div className="background"></div>
       <section className="input">
           <div className="inputContainer">
           <h1>LOGIN</h1>
           <div className="inputBox">
-              <input type="text"required="required" name="username"onChange={(value)=>setUsername(username=value.target.value)}/>
+              <input type="text"required="required" name="username"onChange={(value)=>setUsername(value.target.value)}/>
               <span>Username</span>
           </div>
           <div className="inputBox">
-              <input type="text"required="required" name="password"onChange={(value)=>setPassword(password=value.target.value)}/>
+              <input type="text"required="required" name="password"onChange={(value)=>setPassword(value.target.value)}/>
               <span>Password</span>
           </div>
           <h5 className="error"></h5>
