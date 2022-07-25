@@ -1035,17 +1035,5 @@ footer li a:hover {
     #youtube:hover {
         color: red;
     }
-      
-      
-    .emails{
-        position: absolute;
-        width: 366.92px;
-        height: 60px;
-        left: 675.92px;
-        top: 510.7px;
-        background: rgba(255, 255, 255, 0.08);
-        border-radius: 5px;
-        border-color: #f3b200;
-    }
 
 }
