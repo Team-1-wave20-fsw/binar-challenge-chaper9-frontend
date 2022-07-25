@@ -1,9 +1,10 @@
 /* Global Styling */
 @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans&display=swap");
 /* Responsive Styling */
+
 .test{
-   width: 100vw;
-}
+    width: 100vw;
+ }
 
 /* css navbar */
 .img {
@@ -136,6 +137,7 @@
 #caret-down:hover {
     color: goldenrod;
 }
+
 .prop{
     margin-right: unset;
 }
@@ -489,7 +491,7 @@
 /* Halaman6 */
 #container-fluid-newsletter {
     background-color: black;
-    height: 130vh;
+    height: 145vh;
     background-size: cover;
     background-position: center;
 }
@@ -586,7 +588,7 @@ footer .bin  {
 
 footer .upper {
     display: flex;
-    padding: 2em;
+    padding: 3em;
 }
   
 footer .bottom {
@@ -601,7 +603,7 @@ footer .up-left {
   
 footer .btm-left {
     margin-left: 5em;
-    margin-right: -5.3em;
+    margin-right: -8.3em;
 }
   
 footer ul {
@@ -660,25 +662,11 @@ footer li a:hover {
 #youtube:hover {
     color: red;
 }
-  
-  
-.emails{
-    position: absolute;
-    width: 366.92px;
-    height: 60px;
-    left: 675.92px;
-    top: 510.7px;
-    background: rgba(255, 255, 255, 0.08);
-    border-radius: 5px;
-    border-color: #f3b200;
-}
 
 
 
 
-
-
-@media (max-width:900px) {
+@media (max-width:800px) {
     #container-fluid-games > .row > .col > .the {
         color: white;
         margin-top: -5vh;
@@ -1046,18 +1034,6 @@ footer li a:hover {
       
     #youtube:hover {
         color: red;
-    }
-      
-      
-    .emails{
-        position: absolute;
-        width: 366.92px;
-        height: 60px;
-        left: 675.92px;
-        top: 510.7px;
-        background: rgba(255, 255, 255, 0.08);
-        border-radius: 5px;
-        border-color: #f3b200;
     }
 
 }
