@@ -7,19 +7,21 @@ import jada from "./images/jada.png"
 import rockpaperstrategy from "./images/rockpaperstrategy-1600.jpg"
 import skull from "./images/skull.webp"
 import twitter from "./images/twitter.svg"
+import axios from 'axios'
 
 
 const LandingPage = () => {
     const[currentUser,setUser]=useState({status:"",fullname:""})
     useEffect(()=>{
-        const token = sessionStorage.getItem("accesToken")
-            //axios.get('',{headers:{authorization:token}}).then(res =>{
-                //const user = {authorization:res.data.authorization,fullname:res.data.fullname} // True or False
-               setUser({loggedIn:true,fullname:"Bambang"})
-        },[])
+        const token = sessionStorage.getItem("accessToken")
+        console.log(token)
+            axios.get('http://localhost:4000/api/login',{headers:{authorization:token}}).then(res =>{
+               setUser({loggedIn:res.data.authorized,fullname:res.data.fullname})
+        })},[])
 
       return (
       <>
+      <section className='test'>
       <div className="container-fluid img">
             <div className="hero-main-info">
                 <div class="p-5 text-center text-white bg-transparent" id="hero-main">
@@ -36,12 +38,13 @@ const LandingPage = () => {
         <div id="container-fluid-games" className="container-fluid">
           {/* <div className=" "> */}
               <div className="row align-items-center">
-                  <div className="col">
+                  
+                  <div className="col-4">
                       <h3 className='what'>What's so special ?</h3>
                       <br/>
                       <h1 className='the'>The Games</h1>
                   </div>
-                  <div className="col">
+                  <div className="col-6">
                   <div id="carouselExampleIndicators" className="carousel slide" data-ride="carousel">
                     <ol className="carousel-indicators">
                       <li data-target="#carouselExampleIndicators" data-slide-to="0" className="active"></li>
@@ -233,7 +236,7 @@ const LandingPage = () => {
 
       <div id="container-fluid-newsletter" className="container-fluid-newsletter">
           {/* <div className=" "> */}
-              <div className="row">
+              <div className="row prop">
                   <div className="col-sm-4">
                       <img src={skull} className="img-fluid" alt="skull" />
                   </div>
@@ -310,6 +313,7 @@ const LandingPage = () => {
               </footer>
           {/* </div>   */}
       </div>
+      </section>
         
       </>
     )                                                             

@@ -1,7 +1,9 @@
 /* Global Styling */
 @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans&display=swap");
 /* Responsive Styling */
-
+.test{
+   width: 100vw;
+}
 
 /* css navbar */
 .img {
@@ -133,6 +135,9 @@
 
 #caret-down:hover {
     color: goldenrod;
+}
+.prop{
+    margin-right: unset;
 }
 
 /* Halaman2 */

@@ -4,24 +4,11 @@ import styles from './NavBar.css';
 function NavBar(){
   const[currentUser,setUser]=useState({status:"",fullname:""})
   useEffect(()=>{
-    //axios.get('',{headers:{authorization:token}}).then(res =>{
-      //const status = res.data.authorization
-      //const fullname = res.data.fullname
-       // True or False
-      setUser({loggedIn:false,fullname:"Fariz"})
-  //})
-  },[])
-  
- /* let statusCheck = () =>{
-    /*const token = sessionStorage.getItem("accesToken")
-    axios.get('',{headers:{authorization:token}}).then(res =>{
-        const status = res.data.authorization // True or False
-       return status
-    })
-    return true
-    
-}*/
-//const status = statusCheck()
+    const token = sessionStorage.getItem("accessToken")
+    console.log(token)
+        axios.get('http://localhost:4000/api/login',{headers:{authorization:token}}).then(res =>{
+           setUser({loggedIn:res.data.authorized,fullname:res.data.fullname})
+    })},[])
     return(
         <>
         <nav className="navbar navbar-expand-lg ">
@@ -50,7 +37,7 @@ function NavBar(){
           <a className="nav-link" href="#">{currentUser?.loggedIn?currentUser?.fullname.toUpperCase():""}<span className="sr-only">(current)</span></a>
         </li>
         <li className="nav-item">
-          <a className="nav-link"onClick={currentUser?.loggedIn ? ()=>console.log("LOGOUT")/*{sessionStorage.removeItem("accessToken")window.location="/home"}*/:()=>console.log("LOGIN")} href={currentUser?.loggedIn? "#":"#"}>{currentUser?.loggedIn? "LOGOUT":"LOGIN"}</a>
+          <a className="nav-link"onClick={currentUser?.loggedIn ? ()=>/*console.log("LOGOUT")*/{sessionStorage.removeItem("accessToken");window.location="/"}:()=>{console.log("LOGIN"); window.location="/Login"}} href="#">{currentUser?.loggedIn? "LOGOUT":"LOGIN"}</a>
         </li>
       
       </ul>

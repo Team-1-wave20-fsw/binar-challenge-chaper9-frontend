@@ -12,7 +12,7 @@ function Register(){
         }else{
             console.log(username,password,fullname,email)
             document.querySelector(".error").innerHTML=""
-            /*axios.post('http://localhost:4000/api/register',{username,password,fullname,email})
+            axios.post('http://localhost:4000/api/register',{username,password,fullname,email})
             .then(res=>{
               
               console.log(res)
@@ -22,7 +22,7 @@ function Register(){
             .catch(err=>{
               console.log(err.response.data)
               document.querySelector(".error").innerHTML=err.response.data.message
-            })*/
+            })
             //Return Backend include {token,name,username,password,loggedIn:true or false}
         }
         
