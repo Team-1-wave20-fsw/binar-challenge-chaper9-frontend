@@ -42,9 +42,8 @@ const Profile = ()=> {
                     <th className="text-center"></th>
                     <th className="text-center"></th>
                     <th className="text-center">
-                      <Button  className="btn-warning "  onClick={() => goToUpdate()}>
-                        Update
-                      </Button>
+                      <button  className="btn-warning "  onClick={() => goToUpdate()}>
+                        Update</button>
                     </th>
                   </tr>
                 </tbody>
