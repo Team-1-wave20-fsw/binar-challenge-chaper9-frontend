@@ -2,99 +2,61 @@
 @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans&display=swap");
 /* Responsive Styling */
 
-* {
-    font-family: arial;
-    border: 0px;
-    margin: 0px;
-}
 
 /* css navbar */
-.nav {
-    display: flex;
-    background-color: rgba(0, 0, 0, 0.863);
-    position: fixed;
-    width: 100vw;
-    height: 70px;
-    /*opacity: 0.6;*/
-    justify-content: space-between;
+.img {
+    background: url("../../assets/images/main-bg.jpg") no-repeat center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    padding: 0 0 0 0;
+    margin:0 auto;
+    width: auto;
+    background-size:cover;
+    background-position: center;
+    height: 100vh;
+    overflow: none;
 }
 
-.nav a {
-    color: white;
-    text-transform: uppercase;
-    text-decoration: none;
+.hero-main-info {
+    height: 100%;
 }
 
-.nav .logo {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    margin-left: 100px;
-}
-
-.logo {
-    font-size: 20px;
-    font-weight: bold;
-    letter-spacing: 3px;
-}
-
-.nav .navmid {
-    display: flex;
-    align-items: center;
-    margin-right: 100px;      
-}
-
-.navmid a {
-    padding: 0px 20px;
-    
-}
-
-.nav .userarea {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    margin-right: 50px;
-}
-
-.userarea a {
-    padding: 0px 20px;
-}
-
- /* halaman1 */
-.mainpage {
+#hero-main {
     display: flex;
     flex-direction: column;
-    background-image: url("./images/main-bg.jpg");
-    background-size: cover;
-    height: 130vh;
-    justify-content: flex-start;
     align-items: center;
-    background-repeat: no-repeat;
-    overflow: hidden;
+    justify-content: center;
+    padding-top: 0px !important;
+    height: 90%;
 }
 
-.mainpage .maincontent {
+#heroTitle {
+    font-size: 4rem !important;
+    font-weight: bold;
+    color: black;
+}
+
+#heroSubtitle {
+    font-size: 2.5rem !important;
+    color: black;
+    font-weight: bold;
+}
+
+.scroll-down-btn {
+    font-size: 14px;
     display: flex;
-    color: white;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.scroll-btn-text {
     text-transform: uppercase;
-    font-size: 2vw;
-    padding-top: 200px;
-    letter-spacing: 2px;
-    
 }
 
 
-.mainpage .tagline {
-    display: flex;
-    color: white;
-    font-size: 2vw;
-    padding-top: 40px;
-}
 
-.mainpage .btn {
-    display: flex;
-    padding-top: 100px;
-}
 
 /* #mainpage > p {
     margin-top: 35vh;
@@ -127,13 +89,12 @@
     animation: cursor-blink 1s steps(2) infinite;
 }
   
-/* .mainpage .div{
+.mainpage .div{
     display: flex;
     flex-wrap: wrap;
     align-content: center;
     color: white;
-   } */
-
+   }
 
 /* halaman2 */
 #container-fluid-main {
@@ -1067,9 +1028,17 @@ footer li a:hover {
     #youtube:hover {
         color: red;
     }
+      
+      
+    .emails{
+        position: absolute;
+        width: 366.92px;
+        height: 60px;
+        left: 675.92px;
+        top: 510.7px;
+        background: rgba(255, 255, 255, 0.08);
+        border-radius: 5px;
+        border-color: #f3b200;
+    }
 
 }
-
-
-
-
