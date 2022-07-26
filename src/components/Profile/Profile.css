@@ -7,17 +7,36 @@
     background-repeat: no-repeat;
     background-size: cover;
     height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-
-.userp{
+.profile-container{
+    background-color: rgba(0, 0, 0, 0.576);
+    width: 60vw;
+    height: 50vh;
+    border-radius: 8px;
+    padding: 30px;
     color: white;
 }
-
-.container {
-    max-width: 200%;
-    padding-top: 20px;
-  /* padding-right: 50px;
-  padding-left: px; */
-  /* margin-right: 2rem;
-  margin-left: 2rem; */
+.user-data{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.data-title{
+    color: rgb(193, 193, 193);
+}
+.user-bio{
+    display: flex;
+    justify-content: flex-start;
+}
+.edit-button{
+    width: 40%;
+    height: 50%;
+    background-color: #FFB343;
+    border: none;
+    padding: 10px;
+    font-weight: bold; 
+    font-size: 16px; /*1366x1.18=16.1*/
 }
