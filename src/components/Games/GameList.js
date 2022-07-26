@@ -25,7 +25,7 @@ export default function GameList() {
             <section className="boxs" onClick={() => window.location = "/DetailGames"}>
                 {users?.data?.map((user, index) => (
                     <div key={index} className="box">
-                        <img className="logo" src={pict} alt="boy" />
+                        <img className="logoJ" src={pict} alt="boy" />
                         <p className="textJ">{user.name}</p>
                     </div>
                 ))}

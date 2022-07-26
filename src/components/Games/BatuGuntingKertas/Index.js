@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import styles from './Index.css';
+import './Index.css';
 import logo from '../../../assets/images/logo.png';
 import kembali from '../../../assets/images/refresh.png';
 import rock from '../../../assets/images/batu.png';
@@ -73,7 +73,7 @@ export default function Index() {
                     &lt;
                 </div>
                 <div className="brand">
-                    <img className="logo" src={logo} alt="logo" />
+                    <img className="logoI" src={logo} alt="logo" />
                     <h1>ROCK PAPER SCISSORS</h1>
                 </div>
             </header>
