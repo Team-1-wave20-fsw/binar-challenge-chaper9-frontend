@@ -1,6 +1,6 @@
 import React from "react";
 import './BatuGuntingKertas.css';
-import foto from '../../../../assets/main-bg.jpg'
+import foto from '../../../../assets/images/main-bg.jpg';
 
 export default function BatuGuntingKertas() {
     const items = [
@@ -21,8 +21,8 @@ export default function BatuGuntingKertas() {
         }
     ]
     return (
-        <div className="container">
-            <div className="row ">
+        <div className="containerBatu">
+            <div className="row">
                 <div className="col-xl-6 mb-5 kiri">
                     <h3 className="gamedetails_texth3">Gunting Kertas Batu</h3>
                     <p className='gamedetails_textp'>Aturannya sangat sederhana. Batu akan menang melawan gunting, gunting akan menang melawan kertas, dan kertas akan menang melawan batu. Ketiganya memiliki porsi yang sama untuk menang atau kalah.</p>
@@ -50,7 +50,7 @@ export default function BatuGuntingKertas() {
                         </table>
                     </div>
                     <div className="b_play d-grid  ">
-                        <button className="play btn btn-primary" type="button">Play Now</button>
+                        <button className="play btn btn-primary" type="button" onClick={() => window.location = "/GamesBatuGuntingKertas"}>Play Now</button>
                     </div>
                 </div>
                 <br />
