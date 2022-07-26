@@ -34,7 +34,7 @@ function NavBar(){
       <ul className="navbar-nav ml-auto right-navbar">
       
         <li className="nav-item active">
-          <a className="nav-link" href="#">{currentUser?.loggedIn?currentUser?.fullname.toUpperCase():""}<span className="sr-only">(current)</span></a>
+          <a className="nav-link" href={currentUser?.loggedIn?"/profile":"/Register"}>{currentUser?.loggedIn?currentUser?.fullname.toUpperCase():"SIGNUP"}<span className="sr-only">(current)</span></a>
         </li>
         <li className="nav-item">
           <a className="nav-link"onClick={currentUser?.loggedIn ? ()=>/*console.log("LOGOUT")*/{sessionStorage.removeItem("accessToken");window.location="/"}:()=>{console.log("LOGIN"); window.location="/Login"}} href="#">{currentUser?.loggedIn? "LOGOUT":"LOGIN"}</a>
