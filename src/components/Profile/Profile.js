@@ -1,12 +1,20 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import NavBar from "../Navbar/Navbar";
 import "./Profile.css"
 import { useNavigate } from 'react-router';
-import { Button } from "reactstrap";
+import axios from 'axios';
 
 
 const Profile = ()=> {
+  const id = sessionStorage.getItem("id")
+  const[currentUser,setCurrentUser]=useState("")
+  useEffect(()=>{
+    axios.get('http://localhost:4000/api/users/'+id,).then(res=>{
+      setCurrentUser(res.data.data)
 
+      console.log(currentUser.bio)
+    })
+  },[])
   const navigation = useNavigate();
 
 
@@ -17,42 +25,39 @@ const Profile = ()=> {
 
   return (
     <>
-    < NavBar/>
-    <div className='page'>
-        <div className="container w-75 p3">
-           <div className="row">
-            <h1 className='userp'>User Profile</h1>
-           </div>
-            <div className="row">
-              <div class="col">
-                <div className="table-responsive">
-                  <table
-                    className="table table-hover table-light table-striped align-middle bordered my-2">
-                <thead className="table-primary text-center">
-                  <tr>
-                    <th className='col-1 '>No.</th>
-                    <th>Full Name</th>
-                    <th>Email</th>
-                    <th>Actions</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <th id="user_id"></th>
-                    <th className="text-center"></th>
-                    <th className="text-center"></th>
-                    <th className="text-center"></th>
-                    <th className="text-center">
-                      <button  className="btn-warning "  onClick={() => goToUpdate()}>
-                        Update</button>
-                    </th>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
+    <NavBar/>
+    <div className='background'>
+        <div className='profile-container'>
+          <div className='user-data'>
+              <div>
+                <h2 className='data-title'>USERNAME</h2>
+                <p>{currentUser.username}</p>
+              </div>
+              <div>
+                <h2 className='data-title'>USER ID</h2>
+                <p>{currentUser.id}</p>
+              </div>
+              <div>
+                <h2 className='data-title'>FULLNAME</h2>
+                <p>{currentUser.fullname}</p>
+              </div>
           </div>
+          <div className='user-bio'>
+              <div>
+                <h2 className='data-title'>BIO</h2>
+                <p>{currentUser.bio? currentUser.bio:"User To Lazy To Write Bio"}</p>
+              </div>
+          </div>
+          <div className='user-data'>
+              <div>
+                <h2 className='data-title'>TOTAL SCORE</h2>
+                <p>{currentUser.total_score? currentUser.total_score:"No Score Yet"}</p>
+              </div>
+              <button className='edit-button' onClick={()=>goToUpdate()}>EDIT</button>
+             
+          </div>
+
         </div>
-      </div>
     </div>
     </>
   )

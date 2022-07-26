@@ -29,7 +29,7 @@ function Register(){
      }
     return(
         <>
-        <div className="background">
+        <div className="background-register">
         </div>
         <section className="input">
             <div className="inputContainer">

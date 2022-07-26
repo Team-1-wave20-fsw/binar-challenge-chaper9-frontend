@@ -14,7 +14,9 @@ function Login(){
         .then(res=>{
           console.log(res.data.data.accessToken)
           sessionStorage.setItem('accessToken',res.data.data.accessToken)
+          sessionStorage.setItem('id',res.data.data.id)
           const user = res.data.data.username
+          console.log(res.data.data)
           return user
         
         }).then(user=>{
@@ -31,7 +33,7 @@ function Login(){
 
   return(
       <>
-      <div className="background"></div>
+      <div className="background-login"></div>
       <section className="input">
           <div className="inputContainer">
           <h1>LOGIN</h1>
