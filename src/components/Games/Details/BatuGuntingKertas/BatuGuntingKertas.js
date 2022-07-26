@@ -14,18 +14,18 @@ export default function BatuGuntingKertas() {
     const items = [
         {
             no: "1",
-            nama: score[0].fullname,
-            score: score[0].total_score
+            nama: score[0]?.fullname,
+            score: score[0]?.total_score
         },
         {
             no: "2",
-            nama: score[1].fullname,
-            score: score[1].total_score
+            nama: score[1]?.fullname,
+            score: score[1]?.total_score
         },
         {
             no: "3",
-            nama: score[2].fullname,
-            score: score[2].total_score
+            nama: score[2]?.fullname,
+            score: score[2]?.total_score
         }
     ]
     const [games, setGames] = useState([]);
