@@ -5,28 +5,44 @@ import axios from 'axios';
 
 
 class UpdateProfile extends React.Component {
-    state={
+    state= { 
         email:"",
         fullname:"",
         bio:"",
         city:"",
         social:""
+    }
+
+   
+   handleInputChange = (event) =>{
+    const target = event.target;
+    const value = target.value;
+    const name = target.name;
+
+    this.setState({
+        [name] : value
+    });
    }
-   handleSubmit(email,fullname,bio,city,social){
+
+
+   
+   handleSubmit=()=>{
     if(this.state.email===""||this.state.fullname===""||this.state.bio===""||this.state.city===""||this.state.social===""){
        document.querySelector(".error").innerHTML="Please Fill The Require Field"
     }else{
-      const {email,fullname,bio,city,social} ={
-          email:this.state.email,
-          fullname:this.state.fullname,
-          bio:this.state.bio,
-          city:this.state.city,
-          social:this.state.social
+        const {email,fullname,bio,city,social} ={
+            email:this.state.email,
+            fullname:this.state.fullname,
+            bio:this.state.bio,
+            city:this.state.city,
+            social:this.state.social
         }
+        
         console.log(email,fullname,bio,city,social)
         document.querySelector(".error").innerHTML=""
-        axios.post('http://localhost:4000/api/',{email,fullname,bio,city,social})
+        axios.post('http://localhost:4000/:id',{email,fullname,bio,city,social})
         .then(res=>{
+          
           console.log(res)
           alert(res.data.message)
          window.location="/Profile"
@@ -37,15 +53,10 @@ class UpdateProfile extends React.Component {
         })
         //Return Backend include {token,name,username,password,loggedIn:true or false}
     }
+    
  }
  
   render(){
-      var email = email
-      var fullname = fullname
-      var bio = bio
-      var city = city
-      var social = social
-
     return (
     <>
     {/* <NavBar /> */}
@@ -61,11 +72,13 @@ class UpdateProfile extends React.Component {
                                 <input
                                     type="email"
                                     className='form-control'
+                                    name='email'
                                     id='expampleInputEmail'
                                     aria-describedby='emailHelp'
+                                    value={this.state.email}
                                     required="required"
                                     placeholder='my@email.com'
-                                    onChange={(value)=>this.setState({email:value.target.value})}
+                                    onChange={this.handleInputChange}
                                 />
                             </div>
                             <div className='form-group'>
@@ -73,11 +86,13 @@ class UpdateProfile extends React.Component {
                                 <input
                                     type="text"
                                     className='form-control'
+                                    name='fullname'
                                     id='expampleInputName'
                                     aria-describedby='emailHelp'
+                                    value={this.state.fullname}
                                     required="required"
                                     placeholder='Enter Fullname'
-                                    onChange={(value)=>this.setState({fullname:value.target.value})}
+                                    onChange={this.handleInputChange}
                                 />
                             </div>
                             <div className='form-group' >
@@ -86,10 +101,11 @@ class UpdateProfile extends React.Component {
                                     type="text"
                                     className='form-control'
                                     id='expampleInputName'
+                                    name='bio'
                                     aria-describedby='emailHelp'
                                     required="required"
                                     placeholder='Enter Bio'
-                                    onChange={(value)=>this.setState({bio:value.target.value})}
+                                    onChange={this.handleInputChange}
                                 />
                             </div>
                             <div className='form-group' >
@@ -98,10 +114,11 @@ class UpdateProfile extends React.Component {
                                     type="text"
                                     className='form-control'
                                     id='expampleInputName'
+                                    name='city'
                                     aria-describedby='emailHelp'
                                     required="required"
                                     placeholder='Enter City'
-                                    onChange={(value)=>this.setState({city:value.target.value})}
+                                    onChange={this.handleInputChange}
                                 />
                             </div>
                             <div className='form-group' >
@@ -110,17 +127,18 @@ class UpdateProfile extends React.Component {
                                     type="text"
                                     className='form-control'
                                     id='expampleInputName'
+                                    name='social'
                                     aria-describedby='emailHelp'
                                     required="required"
                                     placeholder='Enter Social Media Url'
-                                    onChange={(value)=>this.setState({social:value.target.value})}
+                                    onChange={this.handleInputChange}
                                 />
                             </div>
                             <br />
                             <h5 style={{color:"white"}}  className="error"></h5>
                             <button
                             className='btn btn-primary m-auto'
-                            onClick={()=>this.handleSubmit(email,fullname,bio,city,social)}>
+                            onClick={()=>this.handleSubmit()}>
                                 Update your profile
                             </button>
                         </fieldset>

@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Open+Sans:wght@500&family=Titillium+Web:wght@300;700&display=swap');
 
-.background{
+.page{
     min-height: 100vh;
     background-image: url('./images/main-bg.jpg');
     background-position: center;

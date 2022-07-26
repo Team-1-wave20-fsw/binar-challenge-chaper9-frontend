@@ -18,7 +18,7 @@ const Profile = ()=> {
   return (
     <>
     < NavBar/>
-    <div>
+    <div className='page'>
         <div className="container w-75 p3">
            <div className="row">
             <h1 className='userp'>User Profile</h1>
