@@ -29,13 +29,13 @@ const Profile = ()=> {
     <div className='background'>
         <div className='profile-container'>
           <div className='user-data'>
+          <div>
+                <h2 className='data-title'>USER ID</h2>
+                <p>{currentUser.id}</p>
+              </div>
               <div>
                 <h2 className='data-title'>USERNAME</h2>
                 <p>{currentUser.username}</p>
-              </div>
-              <div>
-                <h2 className='data-title'>USER ID</h2>
-                <p>{currentUser.id}</p>
               </div>
               <div>
                 <h2 className='data-title'>FULLNAME</h2>
@@ -48,12 +48,13 @@ const Profile = ()=> {
                 <p>{currentUser.bio? currentUser.bio:"User To Lazy To Write Bio"}</p>
               </div>
           </div>
+          
           <div className='user-data'>
               <div>
                 <h2 className='data-title'>TOTAL SCORE</h2>
                 <p>{currentUser.total_score? currentUser.total_score:"No Score Yet"}</p>
               </div>
-              <button className='edit-button' onClick={()=>goToUpdate()}>EDIT</button>
+              <button className='edit-button' onClick={()=>goToUpdate()}>UPDATE</button>
              
           </div>
 

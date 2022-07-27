@@ -1,50 +1,62 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import NavBar from '../Navbar/Navbar';
 import "./UpdateProfile.css"
 import axios from 'axios';
+import { useNavigate } from 'react-router';
 
 
-class UpdateProfile extends React.Component {
-    state={
-        email:"",
-        fullname:"",
-        bio:"",
-        city:"",
-        social:""
-   }
-   handleSubmit(email,fullname,bio,city,social){
-    if(this.state.email===""||this.state.fullname===""||this.state.bio===""||this.state.city===""||this.state.social===""){
-       document.querySelector(".error").innerHTML="Please Fill The Require Field"
-    }else{
-      const {email,fullname,bio,city,social} ={
-          email:this.state.email,
-          fullname:this.state.fullname,
-          bio:this.state.bio,
-          city:this.state.city,
-          social:this.state.social
+
+function UpdateProfile(){
+    const id = sessionStorage.getItem("id")
+    const[currentUser,setCurrentUser]=useState("")
+
+    const[email,setEmail]= useState("")
+    const[password,setPassword]=useState("")
+    const[fullname,setFullname]=useState("")
+    const[bio,setBio]=useState("")
+    const[city,setCity]=useState("")
+    const[social_media_url,setSocial_Media_Url]=useState("")
+
+    useEffect(()=>{
+        axios.get('http://localhost:4000/api/users/'+id,).then(res=>{
+          setCurrentUser(res.data.data)
+    
+          console.log(currentUser.email)
+        })
+      },[])
+
+    const navigation = useNavigate();
+
+    let handleSubmit=()=>{
+        if(email===""||password===""||fullname===""||bio===""||city===""||social_media_url===""){
+        document.querySelector(".error").innerHTML="Please Fill the Form"
+        }else{
+        console.log({email,fullname,bio,city,social_media_url})
+            document.querySelector(".error").innerHTML=""
+            axios.put('http://localhost:4000/api/users/'+id,{email,password,fullname,bio,city,social_media_url})
+            .then(res=>{
+            console.log(res.data.data.accessToken)
+            sessionStorage.setItem('accessToken',res.data.data.accessToken)
+            sessionStorage.setItem('id',res.data.data.id)
+            const user = res.data.data.id
+            console.log(res.data.data)
+            return user
+            
+            }).then(user=>{
+            alert("Update Success "+user.toUpperCase())
+            window.location.replace("/Profile")
+            })
+            .catch(err=>{
+            console.log(err.response.data)
+            document.querySelector(".error").innerHTML=err.response.data.message
+            })
         }
-        console.log(email,fullname,bio,city,social)
-        document.querySelector(".error").innerHTML=""
-        axios.post('http://localhost:4000/api/',{email,fullname,bio,city,social})
-        .then(res=>{
-          console.log(res)
-          alert(res.data.message)
-         window.location="/Profile"
-        })
-        .catch(err=>{
-          console.log(err.response.data)
-          document.querySelector(".error").innerHTML=err.response.data.message
-        })
-        //Return Backend include {token,name,username,password,loggedIn:true or false}
     }
- }
- 
-  render(){
-      var email = email
-      var fullname = fullname
-      var bio = bio
-      var city = city
-      var social = social
+    
+    function goToProfile() {
+        navigation("/Profile")
+        // navigation("/about")
+    }
 
     return (
     <>
@@ -54,54 +66,66 @@ class UpdateProfile extends React.Component {
         <div className='col-lg-6 col-md-6 m-auto' >
             <div className='container' >
                 <h1 className='text-center'>Update Profile</h1>
-                    <form>
+                    <form >
                         <fieldset>
                             <div className='form-group' >
                                 <label htmlFor='exampleInputEmail'>Email</label>
                                 <input
                                     type="email"
+                                    name='email'
                                     className='form-control'
-                                    id='expampleInputEmail'
-                                    aria-describedby='emailHelp'
+                                    // value={currentUser.email}
                                     required="required"
-                                    placeholder='my@email.com'
-                                    onChange={(value)=>this.setState({email:value.target.value})}
+                                    placeholder={currentUser.email}
+                                    onChange={(value)=>setEmail(value.target.value)}
+                                />
+                            </div>
+                            <div className='form-group' >
+                                <label htmlFor='exampleInputEmail'>Password</label>
+                                <input
+                                    type="password"
+                                    name='password'
+                                    className='form-control'
+                                    // value={currentUser.email}
+                                    required="required"
+                                    placeholder="minimum 6 karakter"
+                                    onChange={(value)=>setPassword(value.target.value)}
                                 />
                             </div>
                             <div className='form-group'>
                                 <label htmlFor='exampleInputName' >Fullname</label>
                                 <input
                                     type="text"
+                                    name='fullname'
                                     className='form-control'
-                                    id='expampleInputName'
-                                    aria-describedby='emailHelp'
+                                    // value={currentUser.fullname}
                                     required="required"
-                                    placeholder='Enter Fullname'
-                                    onChange={(value)=>this.setState({fullname:value.target.value})}
+                                    placeholder={currentUser.fullname}
+                                    onChange={(value)=>setFullname(value.target.value)}
                                 />
                             </div>
                             <div className='form-group' >
                                 <label htmlFor='exampleInputBio'>Bio</label>
                                 <input
                                     type="text"
+                                    name='bio'
                                     className='form-control'
-                                    id='expampleInputName'
-                                    aria-describedby='emailHelp'
+                                    // value={currentUser.bio}
                                     required="required"
-                                    placeholder='Enter Bio'
-                                    onChange={(value)=>this.setState({bio:value.target.value})}
+                                    placeholder={currentUser.bio}
+                                    onChange={(value)=>setBio(value.target.value)}
                                 />
                             </div>
                             <div className='form-group' >
                                 <label htmlFor='exampleInputCity'>City</label>
                                 <input
                                     type="text"
+                                    name='city'
                                     className='form-control'
-                                    id='expampleInputName'
-                                    aria-describedby='emailHelp'
+                                    // value={currentUser.city}
                                     required="required"
-                                    placeholder='Enter City'
-                                    onChange={(value)=>this.setState({city:value.target.value})}
+                                    placeholder={currentUser.city}
+                                    onChange={(value)=>setCity(value.target.value)}
                                 />
                             </div>
                             <div className='form-group' >
@@ -109,19 +133,26 @@ class UpdateProfile extends React.Component {
                                 <input
                                     type="text"
                                     className='form-control'
-                                    id='expampleInputName'
-                                    aria-describedby='emailHelp'
+                                    name='social_media_url'
+                                    // value={currentUser.social_media_url}
                                     required="required"
-                                    placeholder='Enter Social Media Url'
-                                    onChange={(value)=>this.setState({social:value.target.value})}
+                                    placeholder={currentUser.social_media_url}
+                                    onChange={(value)=>setSocial_Media_Url(value.target.value)}
                                 />
                             </div>
                             <br />
                             <h5 style={{color:"white"}}  className="error"></h5>
                             <button
-                            className='btn btn-primary m-auto'
-                            onClick={()=>this.handleSubmit(email,fullname,bio,city,social)}>
+                            className='btn btn-primary'
+                            onClick={()=> handleSubmit()}
+                            >
                                 Update your profile
+                            </button>
+                            <button
+                            className='btn btn-info' name='back'
+                            onClick={()=> goToProfile()}
+                            >
+                                Back
                             </button>
                         </fieldset>
                     </form>
@@ -132,6 +163,6 @@ class UpdateProfile extends React.Component {
     </>
   )
 }
-}
 
-export default UpdateProfile
+
+export default UpdateProfile;
