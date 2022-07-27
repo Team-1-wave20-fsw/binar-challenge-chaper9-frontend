@@ -37,13 +37,9 @@ function UpdateProfile(){
             axios.put(url,{email,fullname,bio,city,social_media_url,password},{headers:{authorization:token}})
 
         
-       .then(user=>{
-            alert("Update Success "+user.toUpperCase())
+       .then(res=>{
+            alert(res.data.message)
             window.location.replace("/Profile")
-            })
-            .catch(err=>{
-            console.log(err.response.data)
-            document.querySelector(".error").innerHTML=err.response.data.message
             })
         }
     }
