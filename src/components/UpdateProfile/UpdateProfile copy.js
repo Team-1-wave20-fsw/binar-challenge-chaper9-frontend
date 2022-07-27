@@ -17,27 +17,32 @@ function UpdateProfile(){
     const[city,setCity]=useState("")
     const[social_media_url,setSocial_Media_Url]=useState("")
 
-    /*useEffect(()=>{
+    useEffect(()=>{
         axios.get('http://localhost:4000/api/users/'+id,).then(res=>{
           setCurrentUser(res.data.data)
     
           console.log(currentUser.email)
         })
-      },[])*/
+      },[])
 
     const navigation = useNavigate();
 
     let handleSubmit=()=>{
-        if(email===""||fullname===""||bio===""||city===""||social_media_url===""){
+        if(email===""||password===""||fullname===""||bio===""||city===""||social_media_url===""){
         document.querySelector(".error").innerHTML="Please Fill the Form"
         }else{
-            const id= sessionStorage.getItem("id")
-            const url = "http://localhost:4000/api/users/"+id
-            const token = sessionStorage.getItem("accessToken")
-            axios.put(url,{email,fullname,bio,city,social_media_url,password},{headers:{authorization:token}})
-
-        
-       .then(user=>{
+        console.log({email,fullname,bio,city,social_media_url})
+            document.querySelector(".error").innerHTML=""
+            axios.put('http://localhost:4000/api/users/'+id,{email,password,fullname,bio,city,social_media_url})
+            .then(res=>{
+            console.log(res.data.data.accessToken)
+            sessionStorage.setItem('accessToken',res.data.data.accessToken)
+            sessionStorage.setItem('id',res.data.data.id)
+            const user = res.data.data.id
+            console.log(res.data.data)
+            return user
+            
+            }).then(user=>{
             alert("Update Success "+user.toUpperCase())
             window.location.replace("/Profile")
             })
@@ -137,10 +142,7 @@ function UpdateProfile(){
                             </div>
                             <br />
                             <h5 style={{color:"white"}}  className="error"></h5>
-                           
-                        </fieldset>
-                    </form>
-                    <button
+                            <button
                             className='btn btn-primary'
                             onClick={()=> handleSubmit()}
                             >
@@ -152,6 +154,8 @@ function UpdateProfile(){
                             >
                                 Back
                             </button>
+                        </fieldset>
+                    </form>
             </div>
         </div>
     </div>

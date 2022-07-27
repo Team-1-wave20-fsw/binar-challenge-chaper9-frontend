@@ -54,7 +54,7 @@ const Profile = ()=> {
                 <h2 className='data-title'>TOTAL SCORE</h2>
                 <p>{currentUser.total_score? currentUser.total_score:"No Score Yet"}</p>
               </div>
-              <button className='edit-button' onClick={()=>goToUpdate()}>UPDATE</button>
+              <button className='edit-button' onClick={()=>goToUpdate()}>EDIT</button>
              
           </div>
 
