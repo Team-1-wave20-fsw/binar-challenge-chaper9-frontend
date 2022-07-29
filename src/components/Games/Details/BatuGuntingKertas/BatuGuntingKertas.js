@@ -1,31 +1,51 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import './BatuGuntingKertas.css';
 import foto from '../../../../assets/images/main-bg.jpg';
+import axios from 'axios';
 
 export default function BatuGuntingKertas() {
     const items = [
         {
             no: "1",
             nama: "boy",
-            score: "99"
+            score: "9"
         },
         {
             no: "2",
             nama: "wahyu",
-            score: "89"
+            score: "8"
         },
         {
             no: "3",
             nama: "jack",
-            score: "79"
+            score: "6"
         }
     ]
+    const [games, setGames] = useState([]);
+    console.log(games);
+    const getGames = async () => {
+        try {
+            let response = await axios.get(`http://localhost:4000/api/game`)
+            setGames(response.data);
+        } catch (e) {
+            console.log(e.message);
+        }
+    }
+
+    useEffect(() => {
+        getGames();
+    }, [])
+
     return (
         <div className="containerBatu">
             <div className="row">
                 <div className="col-xl-6 mb-5 kiri">
-                    <h3 className="gamedetails_texth3">Gunting Kertas Batu</h3>
-                    <p className='gamedetails_textp'>Aturannya sangat sederhana. Batu akan menang melawan gunting, gunting akan menang melawan kertas, dan kertas akan menang melawan batu. Ketiganya memiliki porsi yang sama untuk menang atau kalah.</p>
+                    {games?.data?.map((game, index) => (
+                        <div key={index}>
+                            <h3 className="gamedetails_texth3">{game.name}</h3>
+                            <p className='gamedetails_textp'>{game.description}</p>
+                        </div>
+                    ))}
                     <div className="bungkus">
                         <p className="high_p">Highscore Top 3</p>
                         <table className='table_leaderboard table-hover table-striped table-bordered'>

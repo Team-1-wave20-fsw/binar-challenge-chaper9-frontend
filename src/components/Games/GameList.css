@@ -17,6 +17,7 @@
     margin-left: 10px;
     transition: all 0.25s ease-in-out;
     cursor: pointer;
+    width: 15rem;
 }
 
 .boxs div:hover {
@@ -25,4 +26,11 @@
 
 .logo {
     height: 90%;
+    width: 100%;
+}
+
+.textJ {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    text-align: center;
 }
