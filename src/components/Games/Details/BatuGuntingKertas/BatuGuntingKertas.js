@@ -4,30 +4,17 @@ import foto from '../../../../assets/images/main-bg.jpg';
 import axios from 'axios';
 
 export default function BatuGuntingKertas() {
-    const [score,setScore]=useState([])
-    useEffect(()=>{
-        axios.get('http://localhost:4000/api/users/score').then(res=>{
+    const [score, setScore] = useState([])
+    useEffect(() => {
+        axios.get('http://localhost:4000/api/users/score').then(res => {
             console.log(res.data.scores)
             setScore(res.data.scores)
         })
-    },[])
-    const items = [
-        {
-            no: "1",
-            nama: score[0]?.fullname,
-            score: score[0]?.total_score
-        },
-        {
-            no: "2",
-            nama: score[1]?.fullname,
-            score: score[1]?.total_score
-        },
-        {
-            no: "3",
-            nama: score[2]?.fullname,
-            score: score[2]?.total_score
-        }
-    ]
+    }, []);
+
+    const newScore = score.sort((a, b) => parseFloat(b.total_score) - parseFloat(a.total_score));
+    const items = newScore.slice(0, 3).map((i, idx) => ({ no: idx + 1, nama: i.fullname, score: i.total_score }));
+
     const [games, setGames] = useState([]);
     console.log(games);
     const getGames = async () => {
@@ -38,7 +25,7 @@ export default function BatuGuntingKertas() {
             console.log(e.message);
         }
     }
-
+    console.log(score);
     useEffect(() => {
         getGames();
     }, [])
