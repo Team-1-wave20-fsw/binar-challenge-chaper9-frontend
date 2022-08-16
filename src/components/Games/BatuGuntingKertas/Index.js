@@ -5,6 +5,7 @@ import kembali from '../../../assets/images/refresh.png';
 import rock from '../../../assets/images/batu.png';
 import scissor from '../../../assets/images/gunting.png';
 import paper from '../../../assets/images/kertas.png';
+import axios from "axios";
 
 export default function Index() {
     const [action, setAction] = useState('');
@@ -12,6 +13,8 @@ export default function Index() {
     const [cscore, setCscore] = useState(0);
     const [status, setStatus] = useState('');
     const [comstyle, setComstyle] = useState('');
+
+    const userid = sessionStorage.getItem("id");
 
     const rockIcon = "rock";
     const paperIcon = "paper";
@@ -56,13 +59,25 @@ export default function Index() {
             setStatus('VS');
         }
     }
+
+    const postGames = async () => {
+        try {
+            let response = await axios.post("http://localhost:4000/api/gameplay/add", { gameid: 1, score: pscore, userid })
+            console.log(response.data);
+        } catch (e) {
+            console.log(e.message);
+        }
+    }
+
     useEffect(() => {
         actionGame();
         if (parseInt(pscore) + parseInt(cscore) === 10) {
             parseInt(pscore) > parseInt(cscore) ? alert("PLAYER WIN") : alert("COM WIN");
+            postGames();
             setPscore(0);
             setCscore(0);
             setStatus('VS');
+
         }
     }, [action])
 
